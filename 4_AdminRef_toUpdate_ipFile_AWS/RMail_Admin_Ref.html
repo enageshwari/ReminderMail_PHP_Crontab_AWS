@@ -1,0 +1,179 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML>
+<HEAD>
+	<META HTTP-EQUIV="CONTENT-TYPE" CONTENT="text/html; charset=utf-8">
+	<TITLE></TITLE>
+	<META NAME="GENERATOR" CONTENT="OpenOffice.org 3.2  (Unix)">
+	<META NAME="AUTHOR" CONTENT="Rahul Kanna">
+	<META NAME="CREATED" CONTENT="20130905;13370700">
+	<META NAME="CHANGEDBY" CONTENT="Rahul Kanna">
+	<META NAME="CHANGED" CONTENT="20130905;13563600">
+	<META NAME="Info 1" CONTENT="">
+	<META NAME="Info 2" CONTENT="">
+	<META NAME="Info 3" CONTENT="">
+	<META NAME="Info 4" CONTENT="">
+	<STYLE TYPE="text/css">
+	<!--
+		@page { margin: 0.79in }
+		P { margin-bottom: 0.08in; direction: ltr; color: #000000; text-align: left; widows: 0; orphans: 0 }
+		P.western { font-family: "Liberation Serif", "Times New Roman", serif; font-size: 12pt; so-language: en-US }
+		P.cjk { font-family: "DejaVu Sans"; font-size: 12pt; so-language: zh-CN }
+		P.ctl { font-family: "DejaVu Sans"; font-size: 12pt; so-language: hi-IN }
+		A:link { so-language: zxx }
+	-->
+	</STYLE>
+</HEAD>
+<BODY LANG="en-US" TEXT="#000000" DIR="LTR">
+<P CLASS="western" ALIGN=CENTER STYLE="margin-bottom: 0in"><FONT SIZE=7 STYLE="font-size: 32pt"><B>Remind
+Mail – Administer Ref - V1</B></FONT></P>
+<P CLASS="western" STYLE="margin-bottom: 0in"><BR>
+</P>
+<P CLASS="western" STYLE="margin-bottom: 0in"><B>To update reminder
+information in a file follow the below set of steps :</B></P>
+<P CLASS="western" STYLE="margin-bottom: 0in"><BR>
+</P>
+<P CLASS="western" STYLE="margin-bottom: 0in"><I><U><B>Req  OS :
+Linux</B></U></I></P>
+<P CLASS="western" STYLE="margin-bottom: 0in"><BR>
+</P>
+<OL>
+	<LI><P CLASS="western" STYLE="margin-bottom: 0in">Start Terminal</P>
+</OL>
+<P CLASS="western" STYLE="margin-bottom: 0in"><BR>
+</P>
+<OL START=2>
+	<LI><P CLASS="western" STYLE="margin-bottom: 0in">Download Private
+	Key file – NaggyKeyPair.pem to a directory ( for eg:
+	~/Desktop/Suganya/aws/imp)</P>
+</OL>
+<P CLASS="western" STYLE="margin-bottom: 0in">	       scp -i
+NaggyKeyPair.pem
+ec2-54-211-220-96.compute-1.amazonaws.com:~/NaggyKeyPair.pem
+~/Desktop/Suganya/aws/imp/NaggyKeyPair.pem</P>
+<P CLASS="western" STYLE="margin-bottom: 0in">		</P>
+<OL START=3>
+	<LI><P CLASS="western" STYLE="margin-bottom: 0in">Type or Copy below
+	command ( Ctrl + C) 
+	</P>
+</OL>
+<P CLASS="western" STYLE="margin-bottom: 0in">ssh -i
+~/Desktop/Suganya/aws/imp/NaggyKeyPair.pem
+ec2-user@ec2-54-211-220-96.compute-1.amazonaws.com</P>
+<P CLASS="western" STYLE="margin-bottom: 0in">		</P>
+<P CLASS="western" STYLE="margin-bottom: 0in">		3.1) If you did copy
+, paste it in terminal ( Ctrl + Shift +  V )</P>
+<P CLASS="western" STYLE="margin-bottom: 0in"><BR>
+</P>
+<P CLASS="western" STYLE="margin-bottom: 0in">     	4.   To go to the
+directory where you have the reminder info file</P>
+<P CLASS="western" STYLE="margin-bottom: 0in">		cd /var/www/html</P>
+<P CLASS="western" STYLE="margin-bottom: 0in"><BR>
+</P>
+<P CLASS="western" STYLE="margin-bottom: 0in">	5.   To open the file
+in edit mode</P>
+<P CLASS="western" STYLE="margin-bottom: 0in">     		vi
+reminderinfo.csv</P>
+<P CLASS="western" STYLE="margin-bottom: 0in">   
+</P>
+<P CLASS="western" STYLE="margin-bottom: 0in">	6.   Press I to insert</P>
+<P CLASS="western" STYLE="margin-bottom: 0in"><BR>
+</P>
+<P CLASS="western" STYLE="margin-bottom: 0in">	7.   To add new mail
+id info , follow the below format</P>
+<P CLASS="western" STYLE="margin-bottom: 0in">		Eg ) mail to|       
+<FONT COLOR="#000080"><SPAN LANG="zxx"><U><A HREF="mailto:suganya.rahulkanna@gmail.com">suganya.rahulkanna@gmail.com</A></U></SPAN></FONT></P>
+<P CLASS="western" STYLE="margin-bottom: 0in">		Note : 
+</P>
+<P CLASS="western" STYLE="margin-bottom: 0in">		&gt; This is like a
+header for the reminder information that you are going to add</P>
+<P CLASS="western" STYLE="margin-bottom: 0in">		&gt; It can be
+followed by yearly, monthly, daily mng, daily evng reminders</P>
+<P CLASS="western" STYLE="margin-bottom: 0in">		&gt; You can go to
+the bottom most portion of the file , when you add your mail info and
+			    reminder info for the first time , also you can have a empty
+line below you give your 			    mail id info.</P>
+<P CLASS="western" STYLE="margin-bottom: 0in"><BR>
+</P>
+<P CLASS="western" STYLE="margin-bottom: 0in">	8.   Format of yearly
+reminder:</P>
+<P CLASS="western" STYLE="margin-bottom: 0in">		yearly|Month either
+in number or in 3 chars|date in 1 or 2 digits|reminder information</P>
+<P CLASS="western" STYLE="margin-bottom: 0in">		eg)
+yearly|Jun|28|Rahul kanna's b'day</P>
+<P CLASS="western" STYLE="margin-bottom: 0in"><BR>
+</P>
+<P CLASS="western" STYLE="margin-bottom: 0in">	9.   Format of monthly
+reminder:</P>
+<P CLASS="western" STYLE="margin-bottom: 0in">		monthly|date in 1 or
+2 digits|reminder information</P>
+<P CLASS="western" STYLE="margin-bottom: 0in">		eg) monthly|31|Pay
+house rent|Pay Elec Bill|Pay Vonage Bill</P>
+<P CLASS="western" STYLE="margin-bottom: 0in"><BR>
+</P>
+<P CLASS="western" STYLE="margin-bottom: 0in">	10. Format of daily
+reminder which u like to remind you in morning at 10 pm.</P>
+<P CLASS="western" STYLE="margin-bottom: 0in">		Fmt : daily mng|
+reminder info 
+</P>
+<P CLASS="western" STYLE="margin-bottom: 0in">		eg: daily mng| Don't
+forget to take Phone , Car &amp; House key</P>
+<P CLASS="western" STYLE="margin-bottom: 0in"><BR>
+</P>
+<P CLASS="western" STYLE="margin-bottom: 0in">	11.  Format of daily
+reminder which u like to remind you in evng at 6 pm.</P>
+<P CLASS="western" STYLE="margin-bottom: 0in">		Fmt : daily evng|
+reminder info 
+</P>
+<P CLASS="western" STYLE="margin-bottom: 0in">		eg:     daily evng|
+Don't forget to bring lunch box	</P>
+<P CLASS="western" STYLE="margin-bottom: 0in">		Type :wq – to save
+and quit the file.</P>
+<P CLASS="western" STYLE="margin-bottom: 0in"><BR>
+</P>
+<P CLASS="western" STYLE="margin-bottom: 0in"><BR>
+</P>
+<P CLASS="western" STYLE="margin-bottom: 0in"><B>To Change
+Scheduling:</B></P>
+<P CLASS="western" STYLE="margin-bottom: 0in"><BR>
+</P>
+<P CLASS="western" STYLE="margin-bottom: 0in">crontab -e</P>
+<P CLASS="western" STYLE="margin-bottom: 0in"><BR>
+</P>
+<P CLASS="western" STYLE="margin-bottom: 0in">chk existing scheduling
+and do new scheduling similarly</P>
+<P CLASS="western" STYLE="margin-bottom: 0in"><BR>
+</P>
+<P CLASS="western" STYLE="margin-bottom: 0in"><B>To Transfer to Ec2
+instance:</B></P>
+<P CLASS="western" STYLE="margin-bottom: 0in"><BR>
+</P>
+<P CLASS="western" STYLE="margin-bottom: 0in">rahulkanna@ubuntu:~/Desktop/Suganya/aws/imp$
+scp -i NaggyKeyPair.pem file.php
+ec2-user@ec2-54-211-220-96.compute-1.amazonaws.com:~</P>
+<P CLASS="western" STYLE="margin-bottom: 0in"><BR>
+</P>
+<P CLASS="western" STYLE="margin-bottom: 0in">NaggyKeyPair.pem      
+                                                                     
+                             100% 1696     1.7KB/s   00:00    
+</P>
+<P CLASS="western" STYLE="margin-bottom: 0in"><BR>
+</P>
+<P CLASS="western" STYLE="margin-bottom: 0in">copy the php file to -
+/var/www/html of new host</P>
+<P CLASS="western" STYLE="margin-bottom: 0in"><BR>
+</P>
+<P CLASS="western" STYLE="margin-bottom: 0in"><B>Run in web:</B></P>
+<P CLASS="western" STYLE="margin-bottom: 0in"><BR>
+</P>
+<P CLASS="western" STYLE="margin-bottom: 0in"><FONT COLOR="#000080"><SPAN LANG="zxx"><U><A HREF="http://ec2-54-211-220-96.compute-1.amazonaws.com/remindermail.php"><B>http://ec2-54-211-220-96.compute-1.amazonaws.com/remindermail.php</B></A></U></SPAN></FONT></P>
+<P CLASS="western" STYLE="margin-bottom: 0in"><BR>
+</P>
+<P CLASS="western" STYLE="margin-bottom: 0in"><FONT COLOR="#000080"><SPAN LANG="zxx"><U><A HREF="http://ec2-54-211-220-96.compute-1.amazonaws.com/remindermail.php"><B>http://ec2-54-211-220-96.compute-1.amazonaws.com/prevdayreminder.php</B></A></U></SPAN></FONT></P>
+<P CLASS="western" STYLE="margin-bottom: 0in"><BR>
+</P>
+<P CLASS="western" STYLE="margin-bottom: 0in"><FONT COLOR="#000080"><SPAN LANG="zxx"><U><A HREF="http://ec2-54-211-220-96.compute-1.amazonaws.com/remindermail.php"><B>http://ec2-54-211-220-96.compute-1.amazonaws.com/dailymng_reminder.php</B></A></U></SPAN></FONT></P>
+<P CLASS="western" STYLE="margin-bottom: 0in"><BR>
+</P>
+<P CLASS="western" STYLE="margin-bottom: 0in"><FONT COLOR="#000080"><SPAN LANG="zxx"><U><A HREF="http://ec2-54-211-220-96.compute-1.amazonaws.com/remindermail.php"><B>http://ec2-54-211-220-96.compute-1.amazonaws.com/dailyevng_reminder.php</B></A></U></SPAN></FONT></P>
+</BODY>
+</HTML>
